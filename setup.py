@@ -1,0 +1,13 @@
+from setuptools import setup, find_packages
+
+setup(
+    name='Zendesk Rate Throttling Experiment',
+    version='0.0.1',
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires=['Click', 'requests'],
+    entry_points="""
+        [console_scripts]
+        zdrt=zd_rate_throttling.cli:cli
+    """,
+)
