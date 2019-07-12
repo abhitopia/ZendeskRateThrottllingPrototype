@@ -45,8 +45,8 @@ while the usage is lower during morning hours.
 The usage pattern may look like this.
 ![Usage pattern](./usage.png)
 
-As can be seen, the average usage is 272 / 700 only however the usage peaks at certain
-hours.
+As can be seen, the average usage is 272 only. However the usage peaks at certain
+hours (around 6 PM).
 
 Suppose a third party who has access to the API wishes to make API calls while ensuring that
 internal operations of the organization in consideration are not disrupted.
@@ -54,7 +54,7 @@ internal operations of the organization in consideration are not disrupted.
 This third party can employ a simple strategy to ensure maximal quota utilization while leaving sufficient quota for internal operations to run smoothly.
 
 Third party can make repeated calls to Zendesk API (say to download ticket data). For each call made, 
-third party monitors remaining quota. If the quota falls below a certain predefined threshold (say `min-remaining-allowance`, 
+third party closely monitors remaining quota. If the quota falls below a certain predefined threshold (say `min-remaining-allowance`, 
 third party waits for predefined period of time (call this value `retry-after-mins`)
 before trying again. 
 
@@ -66,13 +66,13 @@ retry-after-mins=5 # wait for 5 mins before retry
 ```  
 
 In this case, during peaks hours when the internal usage is highest,
-this strategy will make 1 call, and 5 minutes before trying again.
+this strategy will make 1 call, and wait for 5 minutes before trying again.
 
 However, during less busy hours when the internal usage is around, say 300 request per minute,
 third party can utilize (700-300-200 = 200) requests per minute.
 
 If for whatever, unforeseen reason, this fluctuates and internal usage goes up again, 
-then withing at most one request, the system will adapt and wait another 5 minutes.
+then with at most one extra request, the system will adapt and wait another 5 minutes.
 
 
 ### Test
@@ -198,7 +198,7 @@ Quota allowance hit. Sleeping for 5 minutes.
 If at any point, the usage goes beyond comfortable level, press `ctrl-c` to terminate the command.
 
 
-Additional, the organization can use this utility to find acceptable values of
+Additionally, the organization can use this utility to find acceptable values of
 `min-remaining-allowance` and `retry-after-mins`
 
 
