@@ -1,6 +1,6 @@
 # ZendeskRateThrottlingPrototype
 Contains proof of concept on how we can proactively throttle Zendesk API to ensure
-a certain minimum desired quota is never hit.
+a certain minimum desired quota is always available.
 
 # Installation
 
