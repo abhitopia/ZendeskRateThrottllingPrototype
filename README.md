@@ -1,14 +1,14 @@
-# ZendeskRateThrottllingPrototype
+# ZendeskRateThrottlingPrototype
 Contains proof of concept on how we can proactively throttle Zendesk API to ensure
 a certain minimum desired quota is never hit.
 
 # Installation
 
 Download [zip file](https://github.com/abhitopia/ZendeskRateThrottllingPrototype/archive/master.zip)
-or use git if you are comfortable. 
+or use git if you are comfortable. It needs Python 3 to be installed.
 
 ```bash
-cd ZendeskRateThrottlingPrototype
+cd ZendeskRateThrottllingPrototype
 pip install .
 ```
 
@@ -81,8 +81,8 @@ supervised monitored setting.
 
 Typical experiment could be like
 
-```bash
-$ zdrt --subdomain r**tg**mes --token OAuthToken --retry-after-mins 5 --min-remaining-allowance 100
+```console
+$ zdrt --subdomain r**tg**mes --token e0eb51a3643***************5bcb2e*****09688684 --retry-after-mins 5 --min-remaining-allowance 100
 
 Sub-domain: r**tg**mes
 URL: https://r**tg**mes.zendesk.com/api/v2/users/me.json
