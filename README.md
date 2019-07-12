@@ -8,7 +8,7 @@ Download [zip file](https://github.com/abhitopia/ZendeskRateThrottllingPrototype
 or use git if you are comfortable. It needs Python 3 to be installed.
 
 ```bash
-cd ZendeskRateThrottlingPrototype
+cd ZendeskRateThrottllingPrototype
 pip install .
 ```
 
