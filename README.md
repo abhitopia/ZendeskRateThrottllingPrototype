@@ -5,7 +5,7 @@ a certain minimum desired quota is never hit.
 # Installation
 
 Download [zip file](https://github.com/abhitopia/ZendeskRateThrottllingPrototype/archive/master.zip)
-or use git if you are comfortable. 
+or use git if you are comfortable. It needs Python 3 to be installed.
 
 ```bash
 cd ZendeskRateThrottlingPrototype
