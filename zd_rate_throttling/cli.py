@@ -29,7 +29,7 @@ def cli(subdomain, username, password, token, min_remaining_allowance, retry_aft
         auth = base64.b64encode(bytes(u"{}:{}".format(username, password), "utf-8")).decode('utf8')
         header = {'Authorization': "Basic {}".format(auth)}
 
-    response = session.get(f'https://{subdomain}.zendesk.com/api/v2/users/me.json', headers=header)
+    response = session.get('https://{}.zendesk.com/api/v2/users/me.json'.format(subdomain), headers=header)
     if response.status_code != 200:
         print('Received following error when trying to make Zendesk API call')
         sys.exit(1)
@@ -38,14 +38,16 @@ def cli(subdomain, username, password, token, min_remaining_allowance, retry_aft
               "Go to Channels > API > Password Access")
         sys.exit(1)
 
-    url = f'https://{subdomain}.zendesk.com/{api_end_point}'
+    url = 'https://{subdomain}.zendesk.com/{api_end_point}'.format(subdomain=subdomain, api_end_point=api_end_point)
     api_quota = response.headers["X-Rate-Limit"]
     quota_remaining = response.headers['X-Rate-Limit-Remaining']
-    print(f'Sub-domain: {subdomain}\nURL: {url}\nQuota: {api_quota} per minute')
+    print('Sub-domain: {subdomain}\nURL: {url}\nQuota: {api_quota} per minute'.format(subdomain=subdomain, url=url,
+                                                                                      api_quota=api_quota))
 
-    print(f'Repeated calls with me made to {url}.')
-    print(f'However, if the remaining quota per minute falls below {min_remaining_allowance},'
-          f' the program will sleep for {retry_after_mins} minutes before trying again')
+    print('Repeated calls with me made to {}.'.format(url))
+    print(
+        'However, if the remaining quota per minute falls below {min_remaining_allowance}, the program will sleep for {retry_after_mins} minutes before trying again'.format(
+            min_remaining_allowance=min_remaining_allowance, retry_after_mins=retry_after_mins))
 
     print('You can terminate anytime by pressing Ctrl-C')
 
@@ -57,9 +59,11 @@ def cli(subdomain, username, password, token, min_remaining_allowance, retry_aft
             response = session.get(url=url, headers=header)
             if response.status_code == 200:
                 quota_remaining = int(response.headers['X-Rate-Limit-Remaining'])
-                print(f'Call at {time_now} | Quota Remaining: {quota_remaining}')
+                print('Call at {time_now} | Quota Remaining: {quota_remaining}'.format(time_now=time_now,
+                                                                                       quota_remaining=quota_remaining))
                 if quota_remaining <= min_remaining_allowance:
-                    print(f'Quota allowance hit. Sleeping for {retry_after_mins} minutes.')
+                    print('Quota allowance hit. Sleeping for {retry_after_mins} minutes.'.format(
+                        retry_after_mins=retry_after_mins))
                     time.sleep(retry_after_mins * 60)
 
     except KeyboardInterrupt as e:
