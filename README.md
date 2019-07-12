@@ -203,6 +203,6 @@ Additionally, the organization can use this utility to find acceptable values of
 `min-remaining-allowance` and `retry-after-mins`
 
 ## Risk
-The above strategy needs to make atleast 1 call to adapt. So if remaining quota is 0 (by use for internal operations), then this strategy can cause exceeding quota. However, it is very unlikely that internal operations would ever leave remaining quota at 0. If this is the case, please let me know
+The above strategy needs to make atleast 1 call to adapt. So if remaining quota is 0 (by use for internal operations), then this strategy can cause allowed rate limit to exceed causing 429 response code and corresponding delays. However, it is very **unlikely** that internal operations would ever leave remaining quota at 0. If this is the case, please let me know.
 
 
