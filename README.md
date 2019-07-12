@@ -89,7 +89,7 @@ $ zdrt --subdomain r**tg**mes --username dje***s@r**tg**mes.com --password *****
 Sub-domain: r**tg**mes
 URL: https://r**tg**mes.zendesk.com/api/v2/users/me.json
 Quota: 200 per minute
-Repeated calls with me made to https://help-at-trueai.zendesk.com/api/v2/users/me.json.
+Repeated calls will be made to https://help-at-trueai.zendesk.com/api/v2/users/me.json.
 However, if the remaining quota per minute falls below 100, the program will sleep for 5 minutes before trying again
 You can terminate anytime by pressing Ctrl-C
 
