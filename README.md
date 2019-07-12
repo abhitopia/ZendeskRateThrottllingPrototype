@@ -190,7 +190,6 @@ Call at 2019-07-12 01:13:46.665243 | Quota Remaining: 103
 Call at 2019-07-12 01:13:47.046113 | Quota Remaining: 102
 Call at 2019-07-12 01:13:47.381245 | Quota Remaining: 101
 Call at 2019-07-12 01:13:47.701181 | Quota Remaining: 100
-Call at 2019-07-12 01:13:48.025275 | Quota Remaining: 99
 Quota allowance hit. Sleeping for 5 minutes.
 ```
 

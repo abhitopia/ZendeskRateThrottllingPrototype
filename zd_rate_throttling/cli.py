@@ -44,7 +44,7 @@ def cli(subdomain, token, min_remaining_allowance, retry_after_mins, api_end_poi
             if response.status_code == 200:
                 quota_remaining = int(response.headers['X-Rate-Limit-Remaining'])
                 print(f'Call at {time_now} | Quota Remaining: {quota_remaining}')
-                if quota_remaining < min_remaining_allowance:
+                if quota_remaining <= min_remaining_allowance:
                     print(f'Quota allowance hit. Sleeping for {retry_after_mins} minutes.')
                     time.sleep(retry_after_mins * 60)
 
