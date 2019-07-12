@@ -34,7 +34,7 @@ header = {
 }
 ```
 
-This information can be used to modulate the Zendesk download by constantly monitoring
+This information can be used to modulate the data download by constantly monitoring
 remaining quota for that minute.
 
 # Use Case
