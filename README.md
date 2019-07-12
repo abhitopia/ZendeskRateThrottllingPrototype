@@ -84,7 +84,7 @@ supervised monitored setting. In order to use this utility, you must enable pass
 Typical experiment could be like
 
 ```console
-$ zdrt --subdomain r**tg**mes -username dje***s@r**tg**mes.com --password ******** --retry-after-mins 5 --min-remaining-allowance 100
+$ zdrt --subdomain r**tg**mes --username dje***s@r**tg**mes.com --password ******** --retry-after-mins 5 --min-remaining-allowance 100
 
 Sub-domain: r**tg**mes
 URL: https://r**tg**mes.zendesk.com/api/v2/users/me.json
