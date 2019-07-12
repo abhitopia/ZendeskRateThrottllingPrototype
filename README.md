@@ -54,7 +54,7 @@ internal operations of the organization in consideration are not disrupted.
 This third party can employ a simple strategy to ensure maximal quota utilization while leaving sufficient quota for internal operations to run smoothly.
 
 Third party can make repeated calls to Zendesk API (say to download ticket data). For each call made, 
-third party closely monitors remaining quota. If the quota falls below a certain predefined threshold (say `min-remaining-allowance`, 
+third party closely monitors remaining quota. If the quota falls below a certain predefined threshold (call this threshold `min-remaining-allowance`), 
 third party waits for predefined period of time (call this value `retry-after-mins`)
 before trying again. 
 
