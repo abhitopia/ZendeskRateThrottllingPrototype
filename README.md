@@ -81,7 +81,7 @@ supervised monitored setting.
 
 Typical experiment could be like
 
-```bash
+```console
 $ zdrt --subdomain r**tg**mes --token OAuthToken --retry-after-mins 5 --min-remaining-allowance 100
 
 Sub-domain: r**tg**mes
