@@ -77,12 +77,14 @@ then with at most one extra request, the system will adapt and wait another 5 mi
 
 ### Test
 I have created a simple command line utility in python to test this strategy in 
-supervised monitored setting.
+supervised monitored setting. In order to use this utility, you must enable password access to Zendesk API. This can be done temporarily for testing purposes, and safely disabled at a later time.
+
+![Password Access Enable](./enable_password_access.png)
 
 Typical experiment could be like
 
 ```console
-$ zdrt --subdomain r**tg**mes --token e0eb51a3643***************5bcb2e*****09688684 --retry-after-mins 5 --min-remaining-allowance 100
+$ zdrt --subdomain r**tg**mes -username dje***s@r**tg**mes.com --password ******** --retry-after-mins 5 --min-remaining-allowance 100
 
 Sub-domain: r**tg**mes
 URL: https://r**tg**mes.zendesk.com/api/v2/users/me.json
